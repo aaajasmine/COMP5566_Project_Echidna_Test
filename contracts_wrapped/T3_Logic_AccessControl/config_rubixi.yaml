@@ -1,0 +1,3 @@
+testMode: property
+seqLen: 200
+testLimit: 100000

@@ -1,0 +1,19 @@
+[Echidna Vulnerability Detection Evaluation Report]
+--------------------------------------------------
+Project: An Empirical Study of Vulnerability Detection Tools
+Date: 2026-04-09
+Benchmark: T5 - DeFi Vulnerabilities
+
+1. Case: Compound (Oracle Manipulation)
+   - Status: FAILED (Vulnerability Detected)
+   - Method: checkManipulation
+   - Finding: Successfully identified price threshold breach.
+
+2. Case: UwULend (Lending Logic)
+   - Status: FAILED (Vulnerability Detected)
+   - Method: checkSolvency
+   - Finding: Successfully simulated flashloan-style price manipulation.
+
+3. Case: Pika (Access Control)
+   - Status: Pending/In-Progress
+--------------------------------------------------

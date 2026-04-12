@@ -1,0 +1,14 @@
+[2026-04-09 13:59:37.60] Compiling `Test_moonwell_vuln.sol`... Done! (0.765440382s)
+echidna: Couldn't compile given file
+stdout:
+stderr:
+INFO:CryticCompile:'solc --version' running
+INFO:CryticCompile:'solc Test_moonwell_vuln.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/share/contracts_wrapped/T5_OracleManipulation' running
+ERROR:CryticCompile:Invalid solc compilation Error: Expected identifier but got '{'
+ --> Test_moonwell_vuln.sol:2:26:
+  |
+2 | contract EchidnaTest is  {
+  |                          ^
+
+
+

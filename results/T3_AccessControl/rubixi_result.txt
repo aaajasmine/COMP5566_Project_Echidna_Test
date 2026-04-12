@@ -1,0 +1,30 @@
+[2026-04-09 11:20:17.97] Compiling `Test_rubixi.sol`... Done! (0.825315676s)
+Analyzing contract: /share/contracts_wrapped/T3_Logic_AccessControl/Test_rubixi.sol:TestRubixi
+[2026-04-09 11:20:18.83] Running slither on `Test_rubixi.sol`... Done! (1.28363276s)
+[2026-04-09 11:20:20.19] [Worker 1] Test echidna_test_rubixi_secure falsified!
+  Call sequence:
+TestRubixi.checkAccess() from: 0x0000000000000000000000000000000000030000 Time delay: 322363 seconds Block delay: 4996
+TestRubixi.checkAccess() from: 0x0000000000000000000000000000000000020000 Time delay: 358061 seconds Block delay: 53166
+
+[2026-04-09 11:20:20.34] [Worker 3] New coverage: 727 instr, 1 contracts, 1 seqs in corpus (DynamicPyramid)
+[2026-04-09 11:20:20.34] [Worker 3] Test limit reached. Stopping.
+[2026-04-09 11:20:20.34] [Worker 1] New coverage: 727 instr, 1 contracts, 2 seqs in corpus (collectPercentOfFees)
+[2026-04-09 11:20:20.35] [Worker 1] Test limit reached. Stopping.
+[2026-04-09 11:20:20.35] [Worker 0] New coverage: 727 instr, 1 contracts, 3 seqs in corpus (changeFeePercentage)
+[2026-04-09 11:20:20.35] [Worker 2] New coverage: 727 instr, 1 contracts, 4 seqs in corpus (changeMultiplier)
+[2026-04-09 11:20:20.35] [Worker 0] Test limit reached. Stopping.
+[2026-04-09 11:20:20.35] [Worker 2] Test limit reached. Stopping.
+[2026-04-09 11:20:20.35] [status] tests: 1/1, fuzzing: 804/100000, values: [], cov: 727, corpus: 4, gas/s: 0
+echidna_test_rubixi_secure: failed!💥  
+  Call sequence:
+    TestRubixi.checkAccess()
+
+Traces: 
+
+
+Unique instructions: 727
+Unique codehashes: 1
+Corpus size: 4
+Seed: 5168651396334711653
+Total calls: 804
+

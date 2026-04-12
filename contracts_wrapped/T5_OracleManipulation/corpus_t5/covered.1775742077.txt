@@ -1,0 +1,24 @@
+/share/contracts_wrapped/T5_OracleManipulation/Pancake_Test.sol
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity 0.8.7;
+      
+      contract PancakeSwap {
+ *        uint256 public reserve0 = 100;
+ *        uint256 public reserve1 = 100;
+      
+          // 模拟漏洞：在同步储备量时没有进行 K 值校验（恒定乘积公式）
+ *        function sync(uint256 r0, uint256 r1) public {
+ *            reserve0 = r0;
+ *            reserve1 = r1;
+          }
+      }
+      
+ *r   contract TestPancake is PancakeSwap {
+          constructor() payable {}
+          function echidna_check_k() public view returns (bool) {
+              // 评估：恒定乘积 K 不应被恶意缩小（模拟资金池被掏空）
+              return (reserve0 * reserve1) >= 10000;
+          }
+      }
+      
+

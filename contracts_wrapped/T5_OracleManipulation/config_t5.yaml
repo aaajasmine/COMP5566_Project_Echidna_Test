@@ -1,0 +1,5 @@
+testMode: property
+testLimit: 50000
+seqLen: 100
+corpusDir: "corpus_t5"
+balanceContract: 1000000000000000000

@@ -1,0 +1,14 @@
+[2026-04-09 14:26:24.56] Compiling `Echidna_T6_alkemiearn_vuln.sol`... Done! (0.485339316s)
+echidna: Couldn't compile given file
+stdout:
+stderr:
+INFO:CryticCompile:'solc --version' running
+INFO:CryticCompile:'solc Echidna_T6_alkemiearn_vuln.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes,compact-format --allow-paths .,/share/benchmark/T6_BusinessLogic' running
+ERROR:CryticCompile:Invalid solc compilation Error: Expected identifier but got '-'
+ --> Echidna_T6_alkemiearn_vuln.sol:2:25:
+  |
+2 | contract EchidnaTest is - {
+  |                         ^
+
+
+

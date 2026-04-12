@@ -1,0 +1,35 @@
+/share/contracts_wrapped/T5_OracleManipulation/Final_Test.sol
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity 0.8.7;
+      
+      contract OracleTarget {
+ *        uint256 public constant MAX_PRICE = 1000000 * 1e18;
+ *        mapping(address => uint256) public prices;
+      
+ *        function setPrice(address token, uint256 price) public {
+ *            prices[token] = price;
+          }
+      }
+      
+ *r   contract TestOracle is OracleTarget {
+ *        bool public isExploited = false;
+      
+          // 关键修正 1：构造函数必须是 payable，否则 config 里的资金注不进来
+          constructor() payable {}
+      
+          // 关键修正 2：增加接收函数，允许合约接收以太币
+          receive() external payable {}
+      
+ *        function checkManipulation(uint256 fakePrice) public {
+ *            setPrice(address(0x123), fakePrice);
+ *            if (prices[address(0x123)] > MAX_PRICE) {
+ *                isExploited = true;
+              }
+          }
+      
+          function echidna_price_safe() public view returns (bool) {
+              return !isExploited;
+          }
+      }
+      
+

@@ -1,0 +1,27 @@
+/share/contracts_wrapped/T5_OracleManipulation/Luna_Test.sol
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity 0.8.7;
+      
+      contract LunaProtocol {
+ *        uint256 public totalSupply = 1e24; // 1,000,000 Luna
+ *        uint256 public reservePool = 1e18; // 1 UST
+      
+          // 模拟漏洞：铸造逻辑中缺乏对储备金比例的硬性校验
+ *        function mintLuna(uint256 ustAmount) public {
+ *            require(ustAmount > 0);
+              // 简化的算法：如果 ustAmount 极大，可能会导致 totalSupply 异常
+ *            totalSupply += ustAmount * 1000; 
+ *            reservePool += ustAmount;
+          }
+      }
+      
+ *r   contract TestLuna is LunaProtocol {
+          constructor() payable {}
+          
+          function echidna_check_ratio() public view returns (bool) {
+              // 评估：总供应量不应在短时间内由于少量输入而过度通胀
+              return totalSupply < 1e30; 
+          }
+      }
+      
+

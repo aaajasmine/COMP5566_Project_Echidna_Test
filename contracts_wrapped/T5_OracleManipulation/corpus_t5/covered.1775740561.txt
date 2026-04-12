@@ -1,0 +1,32 @@
+/share/contracts_wrapped/T5_OracleManipulation/Pika_Test.sol
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity 0.8.7;
+      
+      contract PikaVault {
+          address public owner;
+ *        bool public isVaultOpen = true;
+      
+          constructor() {
+ *            owner = msg.sender;
+          }
+      
+          // 模拟漏洞：这个关键函数忘记加 onlyOwner 装饰器了
+ *        function setVaultStatus(bool status) public {
+ *            isVaultOpen = status;
+          }
+      }
+      
+ *r   contract TestPika is PikaVault {
+          constructor() payable {}
+      
+          // Echidna 属性：只有管理员能关闭金库
+          // 如果一个非 owner 的随机地址成功把 isVaultOpen 改成了 false，则 FAILED
+          function echidna_admin_only() public view returns (bool) {
+              if (!isVaultOpen && msg.sender != owner) {
+                  return false; // 漏洞检出！
+              }
+              return true;
+          }
+      }
+      
+

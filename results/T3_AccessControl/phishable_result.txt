@@ -1,0 +1,35 @@
+[2026-04-09 11:07:01.42] Compiling `Test_phishable.sol`... Done! (0.954987758s)
+Analyzing contract: /share/contracts_wrapped/T3_Logic_AccessControl/Test_phishable.sol:TestPhishable
+[2026-04-09 11:07:02.39] Running slither on `Test_phishable.sol`... Done! (1.47365708s)
+[2026-04-09 11:07:03.91] [Worker 2] Test echidna_test_money_staying falsified!
+  Call sequence:
+TestPhishable.*fallback*() Value: 0x2e3d787c215787516 Time delay: 136394 seconds Block delay: 52681
+TestPhishable.withdrawAll(0xffffffff) Time delay: 379552 seconds Block delay: 23978
+
+[2026-04-09 11:07:03.91] [Worker 3] Test echidna_test_money_staying falsified!
+  Call sequence:
+TestPhishable.withdrawAll(0x1fffffffe) from: 0x0000000000000000000000000000000000020000 Time delay: 38059 seconds Block delay: 7323
+TestPhishable.withdrawAll(0x10000) from: 0x0000000000000000000000000000000000020000 Time delay: 65535 seconds Block delay: 4896
+TestPhishable.*fallback*() from: 0x0000000000000000000000000000000000020000 Value: 0x3a38d9132ca4be2d1 Time delay: 496616 seconds Block delay: 800
+TestPhishable.withdrawAll(0x0) from: 0x0000000000000000000000000000000000030000 Time delay: 379552 seconds Block delay: 16089
+
+[2026-04-09 11:07:03.97] [Worker 0] Test limit reached. Stopping.
+[2026-04-09 11:07:03.97] [Worker 2] New coverage: 217 instr, 1 contracts, 1 seqs in corpus (withdrawAll)
+[2026-04-09 11:07:03.97] [Worker 2] Test limit reached. Stopping.
+[2026-04-09 11:07:03.97] [Worker 1] Test limit reached. Stopping.
+[2026-04-09 11:07:03.97] [Worker 3] New coverage: 217 instr, 1 contracts, 2 seqs in corpus (withdrawAll)
+[2026-04-09 11:07:03.98] [Worker 3] Test limit reached. Stopping.
+[2026-04-09 11:07:03.98] [status] tests: 1/1, fuzzing: 804/100000, values: [], cov: 217, corpus: 2, gas/s: 0
+echidna_test_money_staying: failed!💥  
+  Call sequence:
+    TestPhishable.withdrawAll(0x0)
+
+Traces: 
+
+
+Unique instructions: 217
+Unique codehashes: 1
+Corpus size: 2
+Seed: 4794604474974162175
+Total calls: 804
+

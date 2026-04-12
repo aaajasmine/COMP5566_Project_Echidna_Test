@@ -1,0 +1,30 @@
+[2026-04-09 12:17:55.66] Compiling `Test_UncheckedReturn.sol`... Done! (0.733390217s)
+Analyzing contract: /share/contracts_wrapped/T4_UncheckedCalls/Test_UncheckedReturn.sol:TestReturnValue
+[2026-04-09 12:17:56.41] Running slither on `Test_UncheckedReturn.sol`... Done! (1.351135981s)
+[2026-04-09 12:17:57.81] [Worker 2] Starting FuzzerAgent 2
+[2026-04-09 12:17:57.81] [Worker 3] Starting FuzzerAgent 3
+[2026-04-09 12:17:57.83] [Worker 3] Test echidna_test_unchecked_call falsified!
+  Call sequence:
+TestReturnValue.checkVulnerability(0x1fffffffe) Time delay: 463588 seconds Block delay: 19933
+
+[2026-04-09 12:17:57.90] [Worker 3] New coverage: 257 instr, 1 contracts, 1 seqs in corpus (callnotchecked)
+[2026-04-09 12:17:57.90] [Worker 0] Test limit reached. Stopping.
+[2026-04-09 12:17:57.91] [Worker 3] Test limit reached. Stopping.
+[2026-04-09 12:17:57.92] [Worker 2] New coverage: 257 instr, 1 contracts, 2 seqs in corpus (checkVulnerability)
+[2026-04-09 12:17:57.92] [Worker 2] Test limit reached. Stopping.
+[2026-04-09 12:17:57.92] [Worker 1] New coverage: 257 instr, 1 contracts, 3 seqs in corpus (checkVulnerability)
+[2026-04-09 12:17:57.92] [Worker 1] Test limit reached. Stopping.
+[2026-04-09 12:17:57.92] [status] tests: 1/1, fuzzing: 404/100000, values: [], cov: 257, corpus: 3, gas/s: 0
+echidna_test_unchecked_call: failed!💥  
+  Call sequence:
+    TestReturnValue.checkVulnerability(0x0)
+
+Traces: 
+
+
+Unique instructions: 257
+Unique codehashes: 1
+Corpus size: 3
+Seed: 580712576703001259
+Total calls: 404
+

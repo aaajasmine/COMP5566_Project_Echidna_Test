@@ -1,0 +1,17 @@
+[2026-04-09 14:26:26.17] Compiling `Echidna_T6_sharwafinance_vuln.sol`... Done! (0.74661631s)
+echidna: Couldn't compile given file
+stdout:
+stderr:
+INFO:CryticCompile:'solc --version' running
+INFO:CryticCompile:'solc Echidna_T6_sharwafinance_vuln.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/share/benchmark/T6_BusinessLogic' running
+ERROR:CryticCompile:Invalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> Echidna_T6_sharwafinance_vuln.sol
+
+Error: Source file requires different compiler version (current compiler is 0.8.10+commit.fc410830.Linux.g++) - note that nightly builds are considered to be strictly less than the released version
+    --> sharwafinance_vuln.sol:1128:1:
+     |
+1128 | pragma solidity 0.8.20;
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+

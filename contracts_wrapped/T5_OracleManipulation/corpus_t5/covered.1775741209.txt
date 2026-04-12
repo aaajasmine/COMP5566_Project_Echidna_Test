@@ -1,0 +1,23 @@
+/share/contracts_wrapped/T5_OracleManipulation/Stable_Test.sol
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity 0.8.7;
+      
+      contract StableCoin {
+ *        uint256 public price = 1e18; // 初始 1.00 USD
+      
+          // 模拟漏洞：价格更新函数没有任何平滑机制或限制
+ *        function updatePrice(uint256 newPrice) public {
+ *            price = newPrice;
+          }
+      }
+      
+ *r   contract TestStable is StableCoin {
+          constructor() payable {}
+          function echidna_check_peg() public view returns (bool) {
+              // 评估：稳定币价格不应剧烈偏离（比如跌破 0.90 或高于 1.10）
+              // Echidna 应该能瞬间找到一个让价格归零或爆炸的输入
+              return price > 0.9e18 && price < 1.1e18;
+          }
+      }
+      
+

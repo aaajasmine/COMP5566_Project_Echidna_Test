@@ -1,0 +1,4 @@
+testMode: property
+balanceContract: 1000000000000000000
+seqLen: 100
+testLimit: 100000

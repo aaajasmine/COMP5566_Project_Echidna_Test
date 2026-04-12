@@ -1,0 +1,28 @@
+[2026-04-09 11:29:30.41] Compiling `Test_Unprotected.sol`... Done! (0.910352618s)
+Analyzing contract: /share/contracts_wrapped/T3_Logic_AccessControl/Test_Unprotected.sol:TestUnprotected
+[2026-04-09 11:29:31.34] Running slither on `Test_Unprotected.sol`... Done! (1.474907609s)
+[2026-04-09 11:29:32.84] [Worker 2] Starting FuzzerAgent 2
+[2026-04-09 11:29:32.85] [Worker 2] Test echidna_test_unprotected_logic falsified!
+  Call sequence:
+TestUnprotected.checkVulnerability(0xa329c0648769a73afac7f9381e08fb43dbea72) Time delay: 405856 seconds Block delay: 31966
+
+[2026-04-09 11:29:32.89] [Worker 0] New coverage: 205 instr, 1 contracts, 1 seqs in corpus (changeOwner)
+[2026-04-09 11:29:32.89] [Worker 1] Test limit reached. Stopping.
+[2026-04-09 11:29:32.90] [Worker 0] Test limit reached. Stopping.
+[2026-04-09 11:29:32.90] [Worker 2] New coverage: 205 instr, 1 contracts, 2 seqs in corpus (checkVulnerability)
+[2026-04-09 11:29:32.90] [Worker 2] Test limit reached. Stopping.
+[2026-04-09 11:29:32.91] [Worker 3] Test limit reached. Stopping.
+[2026-04-09 11:29:32.91] [status] tests: 1/1, fuzzing: 404/100000, values: [], cov: 205, corpus: 2, gas/s: 0
+echidna_test_unprotected_logic: failed!💥  
+  Call sequence:
+    TestUnprotected.checkVulnerability(0x0)
+
+Traces: 
+
+
+Unique instructions: 205
+Unique codehashes: 1
+Corpus size: 2
+Seed: 245880696458752065
+Total calls: 404
+

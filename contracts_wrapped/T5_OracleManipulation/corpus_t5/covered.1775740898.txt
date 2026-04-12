@@ -1,0 +1,27 @@
+/share/contracts_wrapped/T5_OracleManipulation/Badger_Test.sol
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity 0.8.7;
+      
+      contract BadgerYield {
+ *        uint256 public totalVault = 1000 ether;
+ *        mapping(address => uint256) public userRewards;
+      
+          // 模拟漏洞：提取奖励时没有正确更新全局状态
+ *        function claimReward(uint256 amount) public {
+ *            if (amount <= 10 ether) {
+ *                userRewards[msg.sender] += amount;
+                  // 漏洞点：忘记从 totalVault 扣除
+              }
+          }
+      }
+      
+ *r   contract TestBadger is BadgerYield {
+          constructor() payable {}
+      
+          function echidna_reward_limit() public view returns (bool) {
+              // 评估：用户领取的总奖励不应超过金库总额
+              return userRewards[msg.sender] <= totalVault;
+          }
+      }
+      
+

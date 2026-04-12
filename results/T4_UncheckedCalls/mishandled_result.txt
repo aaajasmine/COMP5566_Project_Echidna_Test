@@ -1,0 +1,33 @@
+[2026-04-09 12:13:12.21] Compiling `Test_mishandled.sol`... Done! (0.644353698s)
+Analyzing contract: /share/contracts_wrapped/T4_UncheckedCalls/Test_mishandled.sol:TestSendBack
+[2026-04-09 12:13:12.87] Running slither on `Test_mishandled.sol`... Done! (0.992135198s)
+[2026-04-09 12:13:13.88] [Worker 1] Starting FuzzerAgent 1
+[2026-04-09 12:13:13.88] [Worker 2] Starting FuzzerAgent 2
+[2026-04-09 12:13:13.88] [Worker 3] Starting FuzzerAgent 3
+[2026-04-09 12:13:13.90] [Worker 0] Test echidna_test_unchecked_result falsified!
+  Call sequence:
+
+[2026-04-09 12:13:13.90] [Worker 3] Test echidna_test_unchecked_result falsified!
+  Call sequence:
+
+[2026-04-09 12:13:13.90] [Worker 2] Test echidna_test_unchecked_result falsified!
+  Call sequence:
+
+[2026-04-09 12:13:13.90] [Worker 1] Test echidna_test_unchecked_result falsified!
+  Call sequence:
+
+[2026-04-09 12:13:13.97] [Worker 0] New coverage: 273 instr, 2 contracts, 1 seqs in corpus (fundAttacker)
+[2026-04-09 12:13:13.97] [Worker 0] Test limit reached. Stopping.
+[2026-04-09 12:13:13.97] [Worker 3] New coverage: 273 instr, 2 contracts, 2 seqs in corpus (triggerWithdraw)
+[2026-04-09 12:13:13.97] [Worker 2] Test limit reached. Stopping.
+[2026-04-09 12:13:13.97] [Worker 3] Test limit reached. Stopping.
+[2026-04-09 12:13:13.98] [Worker 1] Test limit reached. Stopping.
+[2026-04-09 12:13:13.98] [status] tests: 1/1, fuzzing: 404/100000, values: [], cov: 273, corpus: 2, gas/s: 0
+echidna_test_unchecked_result: failed with no transactions made ⁉️ 
+
+Unique instructions: 273
+Unique codehashes: 2
+Corpus size: 2
+Seed: 650708340609149607
+Total calls: 404
+
